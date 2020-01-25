@@ -4,22 +4,25 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.List;
-import java.util.UUID;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Data;
 
 @Data
+@Entity
+@Table
 public class Booking {
 	@Id
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
-	private UUID bookingId;
+	private String bookingId;
 	private String passengerName;
 	private String passengerContactNumber;
 	private OffsetDateTime pickupTime;
