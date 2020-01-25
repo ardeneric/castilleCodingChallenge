@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -29,6 +30,7 @@ public class Booking {
 	private Integer rating;
 	private Instant createdOn;
 	private Instant lastModifiedOn;
+	@OneToMany(mappedBy="booking")
 	private List<TripWaypoint> tripWayPoints;
 
 }
