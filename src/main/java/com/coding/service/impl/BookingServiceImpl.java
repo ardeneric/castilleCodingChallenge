@@ -17,6 +17,9 @@ public class BookingServiceImpl implements BookingService {
 
 	@Autowired
 	BookingRepository bookingRepository;
+	
+	@Autowired
+	RabbitMqService rabbitMqService;
 
 	@Override
 	public List<Booking> getAllBookings() {
@@ -33,7 +36,7 @@ public class BookingServiceImpl implements BookingService {
 	@Override
 	public Booking addBooking(Booking booking) {
 		log.info("===== Adding booking :: {} ", booking);
-		// Publish to queue
+		rabbitMqService.publishBookingAdd(booking);
 		return null;
 	}
 

@@ -14,12 +14,24 @@ spring:
     driver-class-name: org.h2.Driver
   
   rabbitmq:
-    virtual-host: localhost
-    host: localhost
-    port: 15672
+    host: 127.0.0.1
+    port: 5672
     username: guest
     password: guest
     listener:
       simple:
         concurrency: 3
         max-concurrency: 10 
+
+        
+rab:
+  bookingExchange: bookingExchange
+  messageExchange: messageExchange
+  messageAuditKey: WEH0TADYza
+  bookingAddKey: ikC5jRpkz5
+  bookingEditKey: 4KWso1Jjig
+  bookingDeleteKey: sj5lukoIa4
+  bookingAddQueue: bookingAddQueue
+  bookingEditQueue: bookingEditQueue
+  bookingDeleteQueue: bookingDeleteQueue
+  messageAuditQueue: messageAuditQueue
