@@ -1,10 +1,12 @@
 package com.coding.entiity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,7 +20,11 @@ import lombok.Data;
 @Data
 @Entity
 @Table
-public class Booking {
+public class Booking implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2555250080903524517L;
 	@Id
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
@@ -33,7 +39,7 @@ public class Booking {
 	private Integer rating;
 	private Instant createdOn;
 	private Instant lastModifiedOn;
-	@OneToMany(mappedBy="booking")
+	@OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
 	private List<TripWaypoint> tripWayPoints;
 
 }

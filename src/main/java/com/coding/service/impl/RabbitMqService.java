@@ -4,8 +4,9 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.coding.dto.AddBookingDto;
+import com.coding.dto.EditBookingDto;
 import com.coding.dto.RabbitDto;
-import com.coding.entiity.Booking;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,12 +21,12 @@ public class RabbitMqService {
 	@Autowired
 	RabbitDto rabbitDto;
 
-	public void publishBookingAdd(Booking booking) {
+	public void publishBookingAdd(AddBookingDto booking) {
 		rabbitTemplate.convertAndSend(rabbitDto.getMessageExchange(), rabbitDto.getBookingAddKey(), booking);
 		log.info(MESSAGE_SENT, booking.toString());
 	}
 
-	public void publishBookingEdit(Booking booking) {
+	public void publishBookingEdit(EditBookingDto booking) {
 		rabbitTemplate.convertAndSend(rabbitDto.getMessageExchange(), rabbitDto.getBookingEditKey(), booking);
 		log.info(MESSAGE_SENT, booking.toString());
 	}

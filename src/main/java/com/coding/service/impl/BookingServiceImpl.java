@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.coding.dto.AddBookingDto;
+import com.coding.dto.EditBookingDto;
 import com.coding.entiity.Booking;
 import com.coding.repository.BookingRepository;
 import com.coding.service.BookingService;
@@ -17,7 +19,7 @@ public class BookingServiceImpl implements BookingService {
 
 	@Autowired
 	BookingRepository bookingRepository;
-	
+
 	@Autowired
 	RabbitMqService rabbitMqService;
 
@@ -34,24 +36,34 @@ public class BookingServiceImpl implements BookingService {
 	}
 
 	@Override
-	public Booking addBooking(Booking booking) {
+	public Booking addBooking(AddBookingDto booking) {
 		log.info("===== Adding booking :: {} ", booking);
 		rabbitMqService.publishBookingAdd(booking);
 		return null;
 	}
 
 	@Override
-	public Booking updateBooking(Booking booking) {
+	public Booking updateBooking(EditBookingDto booking) {
 		log.info("====== Updating booking :: {} ", booking);
-		// publish to queue
+		rabbitMqService.publishBookingEdit(booking);
 		return null;
 	}
 
 	@Override
 	public void deleteBooking(String id) {
 		log.info("===== Deleting booking :: ", id);
-		// pubish to queue
+		rabbitMqService.publishBookingDelete(id);
 
+	}
+
+	@Override
+	public Booking save(Booking booking) {
+		return bookingRepository.save(booking);
+	}
+
+	@Override
+	public void delete(String id) {
+		bookingRepository.deleteById(id);
 	}
 
 }
