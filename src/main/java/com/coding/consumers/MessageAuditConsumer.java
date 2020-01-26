@@ -11,8 +11,7 @@ public class MessageAuditConsumer {
 	
 	@RabbitListener(queues = "${rab.messageAuditQueue}")
 	public void processMessageAudit(Object object) {
-		log.info("Message received for message audit :: {} ", object);
-
+		log.info("===== Message received for message audit :: {} ", object);
 	}
 
 }
