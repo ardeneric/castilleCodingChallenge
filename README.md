@@ -1,4 +1,4 @@
-# castilleCodingChallenge
+# Castille Coding Challenge
 
 ## Back-end API layer to manage bookings. 
 
