@@ -1,4 +1,4 @@
-package com.coding.entiity;
+package com.coding.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -39,6 +41,7 @@ public class Booking implements Serializable{
 	private Integer rating;
 	private Instant createdOn;
 	private Instant lastModifiedOn;
+	@JsonIgnore
 	@OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
 	private List<TripWaypoint> tripWayPoints;
 

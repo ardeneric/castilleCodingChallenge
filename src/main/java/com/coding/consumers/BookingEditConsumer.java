@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.coding.dto.EditBookingDto;
 import com.coding.dto.EditTripWaypointDto;
-import com.coding.entiity.Booking;
-import com.coding.entiity.TripWaypoint;
+import com.coding.entity.Booking;
+import com.coding.entity.TripWaypoint;
 import com.coding.service.BookingService;
 
 import lombok.extern.slf4j.Slf4j;

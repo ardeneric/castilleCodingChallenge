@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.coding.dto.AddBookingDto;
 import com.coding.dto.EditBookingDto;
-import com.coding.entiity.Booking;
+import com.coding.entity.Booking;
 import com.coding.service.BookingService;
 
 import lombok.extern.slf4j.Slf4j;

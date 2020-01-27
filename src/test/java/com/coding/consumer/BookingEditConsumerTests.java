@@ -20,8 +20,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.coding.consumers.BookingEditConsumer;
 import com.coding.dto.EditBookingDto;
 import com.coding.dto.EditTripWaypointDto;
-import com.coding.entiity.Booking;
-import com.coding.entiity.TripWaypoint;
+import com.coding.entity.Booking;
+import com.coding.entity.TripWaypoint;
 import com.coding.repository.BookingRepository;
 
 @SpringBootTest

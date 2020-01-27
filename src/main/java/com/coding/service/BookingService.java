@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.coding.dto.AddBookingDto;
 import com.coding.dto.EditBookingDto;
-import com.coding.entiity.Booking;
+import com.coding.entity.Booking;
 
 public interface BookingService {
 

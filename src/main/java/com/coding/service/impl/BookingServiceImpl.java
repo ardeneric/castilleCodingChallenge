@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.coding.dto.AddBookingDto;
 import com.coding.dto.EditBookingDto;
-import com.coding.entiity.Booking;
+import com.coding.entity.Booking;
 import com.coding.repository.BookingRepository;
 import com.coding.service.BookingService;
 
