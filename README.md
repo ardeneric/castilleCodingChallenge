@@ -2,7 +2,8 @@
 
 ## Back-end API layer to manage bookings. 
 
-###### ***Base URL :: http://localhost:8080/api/v1/***
+###### ***Base URL :: http://localhost:8080/api/v1/*** <br/>
+###### ***Swagger UI API Documentation :: http://localhost:8080/api/v1/swagger-ui.html#***
 
 ### The application exposes a REST layer to manage booking operations (CRUD), specifically:
 ● Get list of all bookings<br/>
@@ -14,8 +15,8 @@
 
 
 # **ADDITIONS**
-● Swagger UI API Documentation :: http://localhost:8080/api/v1/swagger-ui.html#<br/>
-● Unit Tests
+● Swagger UI API Documentation<br/>
+● Unit Tests<br/>
 
 
 # Implemented Expextations
